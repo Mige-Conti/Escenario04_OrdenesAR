@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 167495950}
   - component: {fileID: 167495949}
   - component: {fileID: 167495948}
-  - component: {fileID: 167495947}
   - component: {fileID: 167495946}
+  - component: {fileID: 167495951}
   m_Layer: 0
   m_Name: ImageTarget_Orden_02
   m_TagString: Untagged
@@ -156,25 +156,6 @@ MonoBehaviour:
   detailsText: {fileID: 2062754162}
   statusText: {fileID: 2062754161}
   cardBackgroundRenderer: {fileID: 2062754159}
---- !u!114 &167495947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167495945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 167495949}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_02
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 167495949}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &167495948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +238,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 167495947}
+  mPreview: {fileID: 167495951}
 --- !u!4 &167495950
 Transform:
   m_ObjectHideFlags: 0
@@ -267,13 +248,32 @@ Transform:
   m_GameObject: {fileID: 167495945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2062754160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167495951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167495945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 167495949}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_02
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 167495949}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &174092149
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,8 +412,8 @@ GameObject:
   - component: {fileID: 336988883}
   - component: {fileID: 336988882}
   - component: {fileID: 336988881}
-  - component: {fileID: 336988880}
   - component: {fileID: 336988879}
+  - component: {fileID: 336988884}
   m_Layer: 0
   m_Name: ImageTarget_Orden_06
   m_TagString: Untagged
@@ -438,25 +438,6 @@ MonoBehaviour:
   detailsText: {fileID: 1110174126}
   statusText: {fileID: 1110174125}
   cardBackgroundRenderer: {fileID: 1110174123}
---- !u!114 &336988880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336988878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 336988882}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_06
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 336988882}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &336988881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,7 +520,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 336988880}
+  mPreview: {fileID: 336988884}
 --- !u!4 &336988883
 Transform:
   m_ObjectHideFlags: 0
@@ -549,13 +530,32 @@ Transform:
   m_GameObject: {fileID: 336988878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1110174124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336988884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336988878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 336988882}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_06
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 336988882}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &374927472
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,8 +841,8 @@ GameObject:
   - component: {fileID: 486851843}
   - component: {fileID: 486851842}
   - component: {fileID: 486851841}
-  - component: {fileID: 486851840}
   - component: {fileID: 486851839}
+  - component: {fileID: 486851844}
   m_Layer: 0
   m_Name: ImageTarget_Orden_05
   m_TagString: Untagged
@@ -867,25 +867,6 @@ MonoBehaviour:
   detailsText: {fileID: 1102578737}
   statusText: {fileID: 1102578736}
   cardBackgroundRenderer: {fileID: 1102578734}
---- !u!114 &486851840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486851838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 486851842}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_05
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 486851842}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &486851841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +949,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 486851840}
+  mPreview: {fileID: 486851844}
 --- !u!4 &486851843
 Transform:
   m_ObjectHideFlags: 0
@@ -978,13 +959,32 @@ Transform:
   m_GameObject: {fileID: 486851838}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1102578735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486851844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486851838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 486851842}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_05
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 486851842}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &553638985
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,8 +996,8 @@ GameObject:
   - component: {fileID: 553638990}
   - component: {fileID: 553638989}
   - component: {fileID: 553638988}
-  - component: {fileID: 553638987}
   - component: {fileID: 553638986}
+  - component: {fileID: 553638991}
   m_Layer: 0
   m_Name: ImageTarget_Orden_04
   m_TagString: Untagged
@@ -1022,25 +1022,6 @@ MonoBehaviour:
   detailsText: {fileID: 579966331}
   statusText: {fileID: 579966330}
   cardBackgroundRenderer: {fileID: 579966328}
---- !u!114 &553638987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553638985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 553638989}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_04
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 553638989}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &553638988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +1104,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 553638987}
+  mPreview: {fileID: 553638991}
 --- !u!4 &553638990
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,13 +1114,32 @@ Transform:
   m_GameObject: {fileID: 553638985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 579966329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553638991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553638985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 553638989}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_04
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 553638989}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &565549851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,8 +1151,8 @@ GameObject:
   - component: {fileID: 565549856}
   - component: {fileID: 565549855}
   - component: {fileID: 565549854}
-  - component: {fileID: 565549853}
   - component: {fileID: 565549852}
+  - component: {fileID: 565549857}
   m_Layer: 0
   m_Name: ImageTarget_Orden_07
   m_TagString: Untagged
@@ -1177,25 +1177,6 @@ MonoBehaviour:
   detailsText: {fileID: 1092652954}
   statusText: {fileID: 1092652953}
   cardBackgroundRenderer: {fileID: 1092652951}
---- !u!114 &565549853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565549851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 565549855}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_07
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 565549855}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &565549854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,7 +1259,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 565549853}
+  mPreview: {fileID: 565549857}
 --- !u!4 &565549856
 Transform:
   m_ObjectHideFlags: 0
@@ -1288,13 +1269,32 @@ Transform:
   m_GameObject: {fileID: 565549851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1092652952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565549857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565549851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 565549855}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_07
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 565549855}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1001 &579966327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1769,8 +1769,8 @@ GameObject:
   - component: {fileID: 765453843}
   - component: {fileID: 765453842}
   - component: {fileID: 765453841}
-  - component: {fileID: 765453840}
   - component: {fileID: 765453839}
+  - component: {fileID: 765453844}
   m_Layer: 0
   m_Name: ImageTarget_Orden_03
   m_TagString: Untagged
@@ -1795,25 +1795,6 @@ MonoBehaviour:
   detailsText: {fileID: 1737028240}
   statusText: {fileID: 1737028239}
   cardBackgroundRenderer: {fileID: 1737028237}
---- !u!114 &765453840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765453838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 765453842}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_03
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 765453842}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &765453841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,7 +1877,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 765453840}
+  mPreview: {fileID: 765453844}
 --- !u!4 &765453843
 Transform:
   m_ObjectHideFlags: 0
@@ -1906,13 +1887,32 @@ Transform:
   m_GameObject: {fileID: 765453838}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737028238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765453844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765453838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 765453842}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_03
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 765453842}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &845402108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,8 +1924,8 @@ GameObject:
   - component: {fileID: 845402113}
   - component: {fileID: 845402112}
   - component: {fileID: 845402111}
-  - component: {fileID: 845402110}
   - component: {fileID: 845402109}
+  - component: {fileID: 845402114}
   m_Layer: 0
   m_Name: ImageTarget_Orden_01
   m_TagString: Untagged
@@ -1950,25 +1950,6 @@ MonoBehaviour:
   detailsText: {fileID: 2079054709}
   statusText: {fileID: 2079054708}
   cardBackgroundRenderer: {fileID: 2079054706}
---- !u!114 &845402110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845402108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 845402112}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_01
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 845402112}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &845402111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,7 +2032,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 845402110}
+  mPreview: {fileID: 845402114}
 --- !u!4 &845402113
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,6 +2049,25 @@ Transform:
   - {fileID: 2079054707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845402114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845402108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 845402112}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_01
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 845402112}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &869106073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,7 +2211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2320,7 +2320,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2429,7 +2429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2617,7 +2617,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2726,7 +2726,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3344,7 +3344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2266568571518319665, guid: fe62fffe129a5fe48ae427e34445dc5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3563,8 +3563,8 @@ GameObject:
   - component: {fileID: 2099781087}
   - component: {fileID: 2099781086}
   - component: {fileID: 2099781085}
-  - component: {fileID: 2099781084}
   - component: {fileID: 2099781083}
+  - component: {fileID: 2099781088}
   m_Layer: 0
   m_Name: ImageTarget_Orden_08
   m_TagString: Untagged
@@ -3589,25 +3589,6 @@ MonoBehaviour:
   detailsText: {fileID: 1515660226}
   statusText: {fileID: 1515660225}
   cardBackgroundRenderer: {fileID: 1515660223}
---- !u!114 &2099781084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099781082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 2099781086}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Orden_08
-  mDatasetName: Vuforia/Ordenes_DB.xml
-  mCastedBehaviour: {fileID: 2099781086}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2099781085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,7 +3671,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2099781084}
+  mPreview: {fileID: 2099781088}
 --- !u!4 &2099781087
 Transform:
   m_ObjectHideFlags: 0
@@ -3700,13 +3681,32 @@ Transform:
   m_GameObject: {fileID: 2099781082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1515660224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2099781088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099781082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2099781086}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Orden_08
+  mDatasetName: Vuforia/Ordenes_DB.xml
+  mCastedBehaviour: {fileID: 2099781086}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
