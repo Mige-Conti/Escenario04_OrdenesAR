@@ -1,0 +1,100 @@
+{
+  "orders": [
+    {
+      "id": "ORDEN_01",
+      "swiftCode": "BBHOBDDH/FEB04/01",
+      "beneficiary": "MICHAEL FRANCISCO CRUZ",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 20,
+      "orderCount": 1,
+      "timestamp": "21:05",
+      "hasSecondApproval": false,
+      "realState": "Pagada",
+      "attackNote": "Aterrizó en cuenta falsa de la calle Jupiter."
+    },
+    {
+      "id": "ORDEN_02",
+      "swiftCode": "BBHOBDDH/FEB04/14",
+      "beneficiary": "JESSIE CHRISTOPHER LAGROSAS",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 30,
+      "orderCount": 1,
+      "timestamp": "21:42",
+      "hasSecondApproval": false,
+      "realState": "Pagada",
+      "attackNote": "Pagada sin límites de monto ni validación."
+    },
+    {
+      "id": "ORDEN_03",
+      "swiftCode": "BBHOBDDH/FEB04/18",
+      "beneficiary": "ALFRED SANTOS VERGARA",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 16,
+      "orderCount": 1,
+      "timestamp": "22:15",
+      "hasSecondApproval": false,
+      "realState": "Pagada",
+      "attackNote": "Pagada a cuenta abierta con datos falsos."
+    },
+    {
+      "id": "ORDEN_04",
+      "swiftCode": "BBHOBDDH/FEB04/21",
+      "beneficiary": "ENRICO TEODORO VASQUEZ",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 15,
+      "orderCount": 1,
+      "timestamp": "22:50",
+      "hasSecondApproval": false,
+      "realState": "Pagada",
+      "attackNote": "Pagada. Suma US$81 M junto a las otras 3 de Manila."
+    },
+    {
+      "id": "ORDEN_05",
+      "swiftCode": "BBHOBDDH/FEB04/22",
+      "beneficiary": "SHALIKA FANDATION",
+      "destinationBank": "PAN ASIA BANKING CORP COLOMBO (Sri Lanka)",
+      "amountMillions": 20,
+      "orderCount": 1,
+      "timestamp": "23:10",
+      "hasSecondApproval": false,
+      "realState": "Retenida",
+      "attackNote": "Frenada en Colombo por error de tipeo: «Fandation» en vez de «Foundation»."
+    },
+    {
+      "id": "ORDEN_06",
+      "swiftCode": "BBHOBDDH/FEB04/36",
+      "beneficiary": "CAMPHIL CONSTRUCTIONS",
+      "destinationBank": "SIN BANCO INTERMEDIARIO",
+      "amountMillions": 0,
+      "orderCount": 1,
+      "timestamp": "20:36",
+      "hasSecondApproval": false,
+      "realState": "Bloqueada",
+      "attackNote": "Rechazada por formato (sin banco intermediario) y nunca reenviada."
+    },
+    {
+      "id": "ORDEN_07",
+      "swiftCode": "LOTE SWIFT 01-15 (15 Órdenes)",
+      "beneficiary": "CUENTAS JUPITER ST. (LOTE A)",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 425,
+      "orderCount": 15,
+      "timestamp": "01:15",
+      "hasSecondApproval": false,
+      "realState": "Bloqueada",
+      "attackNote": "15 órdenes congeladas por alerta de lista negra «Jupiter» (petrolero iraní)."
+    },
+    {
+      "id": "ORDEN_08",
+      "swiftCode": "LOTE SWIFT 16-30 (15 Órdenes)",
+      "beneficiary": "CUENTAS JUPITER ST. (LOTE B)",
+      "destinationBank": "RCBC JUPITER ST. MAKATI (Manila)",
+      "amountMillions": 425,
+      "orderCount": 15,
+      "timestamp": "02:40",
+      "hasSecondApproval": false,
+      "realState": "Bloqueada",
+      "attackNote": "15 órdenes congeladas por alerta de lista negra «Jupiter» (naviera sancionada)."
+    }
+  ]
+}
