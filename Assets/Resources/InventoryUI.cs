@@ -20,15 +20,16 @@ public class InventoryUI : MonoBehaviour
     private HashSet<string> scannedOrders = new HashSet<string>();
     private List<OrderTarget> activeTargets = new List<OrderTarget>();
 
-    // Elementos de control del Tablero (Fase B)
+    // Elementos de control del Tablero
     private GameObject floatingToggleButtonObj;
     private TextMeshProUGUI floatingToggleLabel;
     private Image inventoryPanelBgImage;
     private readonly List<GameObject> detailedPanelElements = new List<GameObject>();
     private bool isDashboardVisible = false;
 
-    private static readonly Color32 CyberDarkBg = new Color32(0x02, 0x0A, 0x06, 235);  // #020A06
-    private static readonly Color32 CyberNeonGreen = new Color32(0x38, 0xF2, 0x8A, 255); // #38F28A
+    private static readonly Color32 CyberDarkBg = new Color32(0x02, 0x0A, 0x06, 238);     // #020A06
+    private static readonly Color32 CyberNeonGreen = new Color32(0x38, 0xF2, 0x8A, 255);  // #38F28A
+    private static readonly Color32 CyberNeonCyan = new Color32(0x4D, 0xF7, 0xE2, 255);   // #4DF7E2
 
     void Awake()
     {
@@ -38,6 +39,7 @@ public class InventoryUI : MonoBehaviour
         AudioManager.Instance.EnsureHUDExists();
         _ = CyberMatrixUI.Instance;
         _ = ClassificationHUD.Instance;
+        _ = SwiftCodeInspectorUI.Instance;
     }
 
     void Start()
@@ -45,7 +47,9 @@ public class InventoryUI : MonoBehaviour
         AudioManager.Instance.EnsureHUDExists();
         CyberMatrixUI.Instance.EnsureMatrixCreated();
         ClassificationHUD.Instance.EnsureHUDCreated();
+        SwiftCodeInspectorUI.Instance.EnsureInspectorCreated();
 
+        ArrangeBottomInventoryPanelLayout();
         CacheDetailedPanelElements();
         CreateFloatingDashboardToggleButton();
 
@@ -54,6 +58,104 @@ public class InventoryUI : MonoBehaviour
 
         UpdateInventoryUI();
         CyberMatrixUI.Instance.UpdateMatrix(ruleEngine != null && ruleEngine.isDefenseMode);
+        SwiftCodeInspectorUI.Instance.RefreshInspectorContent();
+    }
+
+    private void ArrangeBottomInventoryPanelLayout()
+    {
+        RectTransform panelRect = GetComponent<RectTransform>();
+        if (panelRect != null)
+        {
+            panelRect.anchorMin = new Vector2(0f, 0f);
+            panelRect.anchorMax = new Vector2(1f, 0f);
+            panelRect.pivot = new Vector2(0.5f, 0f);
+            panelRect.anchoredPosition = Vector2.zero;
+            panelRect.sizeDelta = new Vector2(0f, 240f);
+        }
+
+        Outline panelOutline = GetComponent<Outline>();
+        if (panelOutline == null)
+        {
+            panelOutline = gameObject.AddComponent<Outline>();
+        }
+        panelOutline.effectColor = CyberNeonGreen;
+        panelOutline.effectDistance = new Vector2(0f, 2f);
+
+        // 1. modeStatusText: Fila superior izquierda (sin superponerse con los botones de modo a la derecha)
+        if (modeStatusText != null)
+        {
+            RectTransform rt = modeStatusText.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0f, 1f);
+            rt.anchorMax = new Vector2(1f, 1f);
+            rt.pivot = new Vector2(0f, 1f);
+            rt.offsetMin = new Vector2(26f, -46f);
+            rt.offsetMax = new Vector2(-460f, -12f);
+
+            modeStatusText.fontSize = 18.5f;
+            modeStatusText.fontStyle = FontStyles.Bold;
+            modeStatusText.color = CyberNeonGreen;
+            modeStatusText.alignment = TextAlignmentOptions.MidlineLeft;
+            modeStatusText.textWrappingMode = TextWrappingModes.NoWrap;
+            modeStatusText.overflowMode = TextOverflowModes.Ellipsis;
+        }
+
+        // 2. totalsText: Mitad izquierda inferior con márgenes limpios
+        if (totalsText != null)
+        {
+            RectTransform rt = totalsText.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0f, 0f);
+            rt.anchorMax = new Vector2(0.54f, 1f);
+            rt.pivot = new Vector2(0f, 0.5f);
+            rt.offsetMin = new Vector2(26f, 14f);
+            rt.offsetMax = new Vector2(-16f, -52f);
+
+            totalsText.fontSize = 16f;
+            totalsText.enableAutoSizing = true;
+            totalsText.fontSizeMin = 13f;
+            totalsText.fontSizeMax = 17f;
+            totalsText.color = new Color32(0xE0, 0xFA, 0xEC, 255);
+            totalsText.alignment = TextAlignmentOptions.TopLeft;
+            totalsText.textWrappingMode = TextWrappingModes.Normal;
+        }
+
+        // 3. feedbackText: Mitad derecha inferior (debajo de los botones Ataque 2016 y Con defensa)
+        if (feedbackText != null)
+        {
+            RectTransform rt = feedbackText.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0.55f, 0f);
+            rt.anchorMax = new Vector2(1f, 1f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.offsetMin = new Vector2(16f, 14f);
+            rt.offsetMax = new Vector2(-26f, -84f);
+
+            feedbackText.fontSize = 15.5f;
+            feedbackText.enableAutoSizing = true;
+            feedbackText.fontSizeMin = 12.5f;
+            feedbackText.fontSizeMax = 16.5f;
+            feedbackText.color = CyberNeonCyan;
+            feedbackText.alignment = TextAlignmentOptions.TopLeft;
+            feedbackText.textWrappingMode = TextWrappingModes.Normal;
+        }
+
+        // 4. Alinear limpiamente los botones de Modo ("Ataque 2016" y "Con defensa") en la esquina superior derecha del panel
+        Button[] modeButtons = GetComponentsInChildren<Button>(true);
+        int btnIdx = 0;
+        foreach (Button b in modeButtons)
+        {
+            if (b.gameObject == floatingToggleButtonObj) continue;
+
+            RectTransform brt = b.GetComponent<RectTransform>();
+            if (brt != null)
+            {
+                brt.anchorMin = new Vector2(1f, 1f);
+                brt.anchorMax = new Vector2(1f, 1f);
+                brt.pivot = new Vector2(1f, 1f);
+                brt.sizeDelta = new Vector2(200f, 52f);
+                float rightOffset = (btnIdx == 0) ? -236f : -24f;
+                brt.anchoredPosition = new Vector2(rightOffset, -16f);
+                btnIdx++;
+            }
+        }
     }
 
     private void CacheDetailedPanelElements()
@@ -66,7 +168,6 @@ public class InventoryUI : MonoBehaviour
             inventoryPanelBgImage.color = CyberDarkBg;
         }
 
-        // Recopilar textos referenciados e hijos directos del Panel_Inventario (incluyendo botones Ataque 2016 y Con defensa)
         if (modeStatusText != null && !detailedPanelElements.Contains(modeStatusText.gameObject))
             detailedPanelElements.Add(modeStatusText.gameObject);
 
@@ -115,12 +216,13 @@ public class InventoryUI : MonoBehaviour
         floatingToggleButtonObj.transform.SetParent(parentCanvas.transform, false);
         floatingToggleButtonObj.transform.SetAsLastSibling();
 
+        // Anclado en Top-Right debajo del Panel_Asistente_IA
         RectTransform btnRect = floatingToggleButtonObj.GetComponent<RectTransform>();
-        btnRect.anchorMin = new Vector2(0f, 0f);
-        btnRect.anchorMax = new Vector2(0f, 0f);
-        btnRect.pivot = new Vector2(0f, 0f);
-        btnRect.anchoredPosition = new Vector2(20f, 20f);
-        btnRect.sizeDelta = new Vector2(250f, 44f);
+        btnRect.anchorMin = new Vector2(1f, 1f);
+        btnRect.anchorMax = new Vector2(1f, 1f);
+        btnRect.pivot = new Vector2(1f, 1f);
+        btnRect.anchoredPosition = new Vector2(-20f, -175f);
+        btnRect.sizeDelta = new Vector2(250f, 40f);
 
         Image btnImg = floatingToggleButtonObj.GetComponent<Image>();
         btnImg.color = CyberDarkBg;
@@ -143,8 +245,8 @@ public class InventoryUI : MonoBehaviour
         txtRect.offsetMax = new Vector2(-6f, -2f);
 
         floatingToggleLabel = txtObj.GetComponent<TextMeshProUGUI>();
-        floatingToggleLabel.text = "[ TABLERO DE CONTROL ]";
-        floatingToggleLabel.fontSize = 14.5f;
+        floatingToggleLabel.text = "[ MOSTRAR TABLERO ▼ ]";
+        floatingToggleLabel.fontSize = 14f;
         floatingToggleLabel.fontStyle = FontStyles.Bold;
         floatingToggleLabel.color = CyberNeonGreen;
         floatingToggleLabel.alignment = TextAlignmentOptions.Center;
@@ -167,12 +269,23 @@ public class InventoryUI : MonoBehaviour
             inventoryPanelBgImage.enabled = visible;
         }
 
+        Outline panelOutline = GetComponent<Outline>();
+        if (panelOutline != null)
+        {
+            panelOutline.enabled = visible;
+        }
+
         foreach (GameObject elem in detailedPanelElements)
         {
             if (elem != null && elem != floatingToggleButtonObj)
             {
                 elem.SetActive(visible);
             }
+        }
+
+        if (floatingToggleLabel != null)
+        {
+            floatingToggleLabel.text = visible ? "[ OCULTAR TABLERO ▲ ]" : "[ MOSTRAR TABLERO ▼ ]";
         }
 
         if (floatingToggleButtonObj != null)
@@ -240,6 +353,11 @@ public class InventoryUI : MonoBehaviour
         if (CyberMatrixUI.Instance != null)
         {
             CyberMatrixUI.Instance.UpdateMatrix(active);
+        }
+
+        if (SwiftCodeInspectorUI.Instance != null)
+        {
+            SwiftCodeInspectorUI.Instance.RefreshInspectorContent();
         }
     }
 

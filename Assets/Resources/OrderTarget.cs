@@ -19,6 +19,7 @@ public class OrderTarget : MonoBehaviour
     {
         _ = AudioManager.Instance;
         AudioManager.Instance.EnsureHUDExists();
+        _ = SwiftCodeInspectorUI.Instance;
         EnsureHologramDiorama();
 
         if (InventoryUI.Instance != null)
@@ -87,6 +88,11 @@ public class OrderTarget : MonoBehaviour
             string voiceClipName = "voz_" + cleanOrderId.ToLower();
             string forensicSubtitle = GetForensicSubtitleForOrder(cleanOrderId.ToUpper(), currentOrder);
             AudioManager.Instance.PlayVoice(voiceClipName, forensicSubtitle);
+
+            if (SwiftCodeInspectorUI.Instance != null)
+            {
+                SwiftCodeInspectorUI.Instance.InspectOrder(cleanOrderId);
+            }
 
             if (ClassificationHUD.Instance != null)
             {

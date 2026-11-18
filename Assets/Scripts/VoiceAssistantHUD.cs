@@ -65,7 +65,7 @@ public class VoiceAssistantHUD : MonoBehaviour
             Destroy(existing.gameObject);
         }
 
-        // 1. Panel superior principal (140px de alto, anclado arriba, #020A06 alpha 230)
+        // 1. Panel superior principal (165px de alto, anclado arriba, #020A06 alpha 230)
         panelRoot = new GameObject("Panel_Asistente_IA", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         panelRoot.transform.SetParent(targetCanvas.transform, false);
         panelRoot.transform.SetAsLastSibling();
@@ -75,7 +75,7 @@ public class VoiceAssistantHUD : MonoBehaviour
         panelRect.anchorMax = new Vector2(1f, 1f);
         panelRect.pivot = new Vector2(0.5f, 1f);
         panelRect.anchoredPosition = Vector2.zero;
-        panelRect.sizeDelta = new Vector2(0f, 140f);
+        panelRect.sizeDelta = new Vector2(0f, 165f);
 
         Image panelImage = panelRoot.GetComponent<Image>();
         panelImage.color = BgDarkGreen;
@@ -209,7 +209,10 @@ public class VoiceAssistantHUD : MonoBehaviour
 
         subtitleTextUI = subObj.GetComponent<TextMeshProUGUI>();
         subtitleTextUI.text = "Inicializando módulo de auditoría forense SWIFT...";
-        subtitleTextUI.fontSize = 17.5f;
+        subtitleTextUI.fontSize = 23f;
+        subtitleTextUI.enableAutoSizing = true;
+        subtitleTextUI.fontSizeMin = 18f;
+        subtitleTextUI.fontSizeMax = 25f;
         subtitleTextUI.color = SubtitleColor;
         subtitleTextUI.alignment = TextAlignmentOptions.TopLeft;
         subtitleTextUI.textWrappingMode = TextWrappingModes.Normal;
@@ -322,7 +325,7 @@ public class VoiceAssistantHUD : MonoBehaviour
         }
     }
 
-    public void DisplaySubtitle(string subtitle)
+    public void DisplaySubtitle(string subtitle, float duration = 8f, bool hasAudioClip = false)
     {
         EnsureUIInitialized();
         if (subtitleTextUI == null)
@@ -333,19 +336,25 @@ public class VoiceAssistantHUD : MonoBehaviour
             StopCoroutine(typewriterCoroutine);
         }
 
-        typewriterCoroutine = StartCoroutine(TypewriterRoutine(subtitle));
+        typewriterCoroutine = StartCoroutine(TypewriterRoutine(subtitle, duration, hasAudioClip));
     }
 
-    private IEnumerator TypewriterRoutine(string fullText)
+    private IEnumerator TypewriterRoutine(string fullText, float duration, bool hasAudioClip)
     {
         subtitleTextUI.text = fullText;
         subtitleTextUI.maxVisibleCharacters = 0;
 
-        int totalChars = fullText.Length;
-        for (int i = 0; i <= totalChars; i++)
+        int totalChars = Mathf.Max(1, fullText.Length);
+        float charDelay = (duration * 0.92f) / totalChars;
+        if (!hasAudioClip)
+        {
+            charDelay = Mathf.Max(0.045f, charDelay);
+        }
+
+        for (int i = 0; i <= fullText.Length; i++)
         {
             subtitleTextUI.maxVisibleCharacters = i;
-            yield return new WaitForSecondsRealtime(typewriterCharDelay);
+            yield return new WaitForSecondsRealtime(charDelay);
         }
 
         subtitleTextUI.maxVisibleCharacters = 99999;

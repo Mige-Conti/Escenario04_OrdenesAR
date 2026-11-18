@@ -184,13 +184,16 @@ public class AudioManager : MonoBehaviour
         lastVoiceClipName = clipName;
         lastSubtitleText = subtitleText;
 
+        AudioClip clip = LoadClipSafe(clipName);
+        bool hasClip = clip != null;
+        float duration = hasClip ? clip.length : 8f;
+
         if (VoiceAssistantHUD.Instance != null && !string.IsNullOrEmpty(subtitleText))
         {
-            VoiceAssistantHUD.Instance.DisplaySubtitle(subtitleText);
+            VoiceAssistantHUD.Instance.DisplaySubtitle(subtitleText, duration, hasClip);
         }
 
-        AudioClip clip = LoadClipSafe(clipName);
-        if (clip != null)
+        if (hasClip)
         {
             voiceSource.Stop();
             voiceSource.clip = clip;
@@ -201,7 +204,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             // Si el archivo de audio no existe, simulamos actividad de onda durante la lectura del subtítulo
-            float duration = Mathf.Clamp((subtitleText != null ? subtitleText.Length : 60) * 0.04f, 2.5f, 10f);
             simulatedSpeechEndTime = Time.unscaledTime + duration;
         }
     }
